@@ -1,4 +1,4 @@
-# Formulário Next Node
+# Listagens
 
 Este projeto é uma aplicação construída utilizando **Next.js**, **Node.js** e **Tailwind CSS**. Ele inclui funcionalidades de listagem e um sistema de formulários estilizado com Tailwind.
 
