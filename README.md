@@ -38,7 +38,7 @@ Além disso, foram adicionadas cores personalizadas para o tema:
 1. Clone o repositório:
 
    ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone git@github.com:dennyberrios/Listagens.git
    ```
 
 2. Instale as dependências:
