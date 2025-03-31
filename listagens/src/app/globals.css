@@ -1,7 +1,14 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --warmSand: theme(colors.warmSand);
+  --onyxBlack: theme(colors.onyxBlack);
+}
 
 body {
-  background-color: var(--tw-color-emeraldTeal); /* ✅ Forma correta */
-  color: var(--tw-color-onyxBlack);
+  background-color: var(--warmSand);
+  color: var(--onyxBlack);
   font-family: Arial, Helvetica, sans-serif;
 }
