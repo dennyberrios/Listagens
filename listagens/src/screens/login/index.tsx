@@ -17,11 +17,11 @@ const LoginScreen: React.FC = () => {
     }
 
     return (
-        <main className="text-white">
+        <main className="h-screen flex justify-center items-center">
             <section>
-                <form className="flex flex-col gap-4 p-5 bg-white rounded-md shadow-md w-96 mx-auto mt-20 text-black">
-                    <legend>Login</legend>
-                    <div className="flex flex-col gap-2 bg-emeraldTeal">
+                <form className="flex flex-col gap-5 p-10 bg-white rounded-md shadow-md w-96 mx-auto text-onyxBlack">
+                    <legend className="text-2xl text-center font-extrabold text-emeraldTeal">Login</legend>
+                    <div className="flex flex-col gap-2">
                         <InputLabel
                             label={"E-mail"}
                             type={"email"}

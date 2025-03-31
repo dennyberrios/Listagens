@@ -35,6 +35,7 @@ const InputLabel: React.FC<InputLabelProps> = ({
                 onChange={change}
                 maxLength={maxLength}
                 placeholder={placeholder}
+                className={`p-3 border border-1 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emeraldTeal focus:border-transparent`}
                 {...props}
             />
             {errors && <span>{errors}</span>}
