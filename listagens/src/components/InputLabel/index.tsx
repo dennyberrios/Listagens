@@ -26,7 +26,7 @@ const InputLabel: React.FC<InputLabelProps> = ({
 }) => {
     return (
         <>
-            <label htmlFor={inputName}>{label}</label>
+            <label htmlFor={inputName} className="text-emeraldTeal font-medium">{label}</label>
             <input
                 type={type}
                 id={inputId}
@@ -35,14 +35,13 @@ const InputLabel: React.FC<InputLabelProps> = ({
                 onChange={change}
                 maxLength={maxLength}
                 placeholder={placeholder}
-                className={`p-3 border border-1 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emeraldTeal focus:border-transparent`}
+                className={`px-3 py-2 border border-[1px] rounded-md transition-colors duration-200 ease-in-out 
+                    ${errors ? "border-coralRed outline-none" : "border-gray-300 focus:border-emeraldTeal focus:outline-none"}`}                
                 {...props}
             />
-            {errors && <span>{errors}</span>}
+            {errors && <span className="text-coralRed p-0 m-0">{errors}</span>}
         </>
     );
 };
 
 export default InputLabel;
-
-{/* {errors && <ErrorMessage>{errors}</ErrorMessage>} */ }
