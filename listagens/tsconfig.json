@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     "tailwind.config.ts",
     "postcss.config.mjs"
-  ],
+, "next.config.mjs"  ],
   "exclude": ["node_modules"]
 }
