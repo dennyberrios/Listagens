@@ -17,6 +17,7 @@ const config: Config = {
         pureWhite: "#FFFFFF",
         danger: "#FF6B6B",
         darkDanger: "#FF4F4F",
+        midnightGray: "#1f2937",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
