@@ -2,7 +2,7 @@
 "use client";
 
 import { FC, useRef, useEffect } from "react";
-import Chart from "chart.js/auto";
+import Chart, { TooltipItem } from "chart.js/auto";
 
 interface RadarChartProps {
   metrics: number[];
@@ -57,8 +57,8 @@ const RadarChart: FC<RadarChartProps> = ({
             },
             tooltip: {
               callbacks: {
-                label: (context: any) => {
-                  return `${context.label}: ${context.raw}`;
+                label: (context: TooltipItem<"radar">) => {
+                  return `${context.label}: ${context.raw as number}`;
                 },
               },
             },
@@ -85,7 +85,7 @@ const RadarChart: FC<RadarChartProps> = ({
         chartInstance.current.destroy();
       }
     };
-  }, [metrics]);
+  }, [metrics, labels, title]);
 
   return (
     <div

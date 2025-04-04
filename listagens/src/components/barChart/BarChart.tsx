@@ -2,6 +2,7 @@
 
 import { FC, useRef, useEffect } from "react";
 import Chart from "chart.js/auto";
+import { TooltipItem } from "chart.js";
 
 interface BarChartProps {
   metrics: number[];
@@ -68,7 +69,7 @@ const BarChart: FC<BarChartProps> = ({
             },
             tooltip: {
               callbacks: {
-                label: (context: any) => {
+                label: (context: TooltipItem<"bar">) => {
                   return `${context.label}: ${context.raw}`;
                 },
               },
@@ -101,7 +102,7 @@ const BarChart: FC<BarChartProps> = ({
         chartInstance.current.destroy();
       }
     };
-  }, [metrics]);
+  }, [metrics, labels, title]);
 
   return (
     <div className={`w-full sm:w-[380px] lg:w-[480px] p-4 rounded-lg relative shadow-lg ${backgroundCard}`}>
