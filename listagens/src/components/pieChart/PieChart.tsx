@@ -3,6 +3,7 @@
 
 import { FC, useRef, useEffect } from "react";
 import Chart from "chart.js/auto";
+import { TooltipItem } from "chart.js";
 
 interface PieChartProps {
   metrics: number[];
@@ -63,7 +64,7 @@ const PieChart: FC<PieChartProps> = ({
             },
             tooltip: {
               callbacks: {
-                label: (context: any) => {
+                label: (context: TooltipItem<"pie">) => {
                   return `${context.label}: ${context.raw}%`;
                 },
               },
@@ -78,7 +79,7 @@ const PieChart: FC<PieChartProps> = ({
         chartInstance.current.destroy();
       }
     };
-  }, [metrics]);
+  }, [metrics, labels, title]);
 
   return (
     <div

@@ -91,7 +91,7 @@ const LineChart: FC<LineChartProps> = ({
         chartInstance.current.destroy();
       }
     };
-  }, [metrics]);
+  }, [metrics, labels, title]);
 
   return (
     <div

@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useRef, useEffect } from "react";
-import Chart from "chart.js/auto";
+import Chart, { TooltipItem } from "chart.js/auto";
 
 interface PolarAreaChartProps {
   metrics: number[];
@@ -75,8 +75,8 @@ const PolarAreaChart: FC<PolarAreaChartProps> = ({
             },
             tooltip: {
               callbacks: {
-                label: (context: any) => {
-                  return `${context.label}: ${context.raw}`;
+                label: (tooltipItem: TooltipItem<"polarArea">) => {
+                  return `${tooltipItem.label}: ${tooltipItem.raw as number}`;
                 },
               },
             },
@@ -104,7 +104,7 @@ const PolarAreaChart: FC<PolarAreaChartProps> = ({
         chartInstance.current.destroy();
       }
     };
-  }, [metrics]);
+  }, [metrics, labels, title]);
 
   return (
     <div
